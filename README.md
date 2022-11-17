@@ -8,6 +8,7 @@
 Реализации:
 - [alikaraali / defocusblurPR2011](https://github.com/alikaraali/defocusblurPR2011) - реализация статьи от 2011 года;
 - [xinario / defocus_segmentation](https://github.com/xinario/defocus_segmentation)
+- [codeslake / DMENet](https://github.com/codeslake/DMENet)
 
 Запуски всех проектов осуществлялись на изображениии `s1_train_01.png` из набора данных `S1-v2`:
 
@@ -67,3 +68,24 @@ python3 lbpSharpness.py --input ../dataset/train/s1_train_01.png
 |----------------------------------------------|------------------------------------------------|
 | ![](assets/readme-images/01-s1-train-01.png) | ![](assets/readme-images/05-sharpness-map.png) |
  
+####  codeslake / DMENet
+
+Репозиторий содержит подробную инструкцию по установке зависимостей и запуску проекта.
+
+> Настоятельно рекомендую использовать окружение в Docker-контейнере.
+
+В исходном разрешении `2176 x 1632` процесс был убит ОС. При разрешении `1088 x 816` всё прошло успешно.
+
+Выяснилось, что для запуска требуется минимум 7 Gb GPU и достаточное количество `RAM` (примерно 16 Gb):
+
+![](assets/readme-images/06-gpu-usage.png)
+
+![](assets/readme-images/07-ram-usage.png)
+
+Визуализация полученных результатов:
+
+| Оригинал                                                  | Defocus map                                       |
+|-----------------------------------------------------------|---------------------------------------------------|
+| ![](assets/readme-images/01-s1-train-01.png)              | ![](assets/readme-images/08-defocus-map.png)      |
+| Defocus map min max norm                                  | Sigma map 7 norm                                  |
+| ![](assets/readme-images/09-defocus-map-min-max-norm.png) | ![](assets/readme-images/10-sigma-map-7-norm.png) |
