@@ -7,7 +7,7 @@
 
 Реализации:
 - [alikaraali / defocusblurPR2011](https://github.com/alikaraali/defocusblurPR2011) - реализация статьи от 2011 года;
-- 
+- [xinario / defocus_segmentation](https://github.com/xinario/defocus_segmentation)
 
 Запуски всех проектов осуществлялись на изображениии `s1_train_01.png` из набора данных `S1-v2`:
 
@@ -46,3 +46,24 @@ python3 DE_PR2011.py -i ../dataset/train/s1_train_01.png
 | Оригинал                                     | `Defocus map`                                         |
 |----------------------------------------------|-------------------------------------------------------|
 | ![](assets/readme-images/01-s1-train-01.png) | ![](assets/readme-images/04-s1-train-01.png-bmap.png) |
+
+#### xinario / defocus_segmentation
+
+В репозитории не хватало файла `requirements.txt`, составил список зависимостей:
+```
+numpy==1.17.5  # release date 01.01.2020
+opencv-python==4.1.2.30  # release date 22.11.2019
+```
+
+Запуск проекта осуществляется командой:
+```bash
+python3 lbpSharpness.py --input ../dataset/train/s1_train_01.png
+```
+- `--input` - путь к изображению, для которого необходимо оценить `defocus map`.
+
+Первый запуск прошёл успешно:
+
+| Оригинал                                     | `Sharpness map`                                |
+|----------------------------------------------|------------------------------------------------|
+| ![](assets/readme-images/01-s1-train-01.png) | ![](assets/readme-images/05-sharpness-map.png) |
+ 
